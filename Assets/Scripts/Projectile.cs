@@ -7,6 +7,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] private float speed;
     private float direction;
     private bool hit;
+    private float lifetime;
  
 
     private Animator anim;
@@ -26,17 +27,27 @@ public class Projectile : MonoBehaviour
         float movementSpeed = speed * Time.deltaTime * direction;
         transform.Translate(movementSpeed, 0, 0);
 
-     
+         lifetime += Time.deltaTime;
+        if (lifetime > 5) gameObject.SetActive(false);
     }
 
     public void SetDirection(float _direction)
     {
-       
+       lifetime = 0;
         direction = _direction;
         gameObject.SetActive(true);
         hit = false;
         boxCollider.enabled = true;
 
-      
+       float localScaleX = transform.localScale.x;
+        if (Mathf.Sign(localScaleX) != _direction)
+            localScaleX = -localScaleX;
+
+        transform.localScale = new Vector3(localScaleX, transform.localScale.y, transform.localScale.z);
+    }
+
+     private void Deactivate()
+    {
+        gameObject.SetActive(false);
     }
 }
