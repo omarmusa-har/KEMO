@@ -1,17 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-
-
     [SerializeField] private float attackCooldown;
     [SerializeField] private Transform firePoint;
     [SerializeField] private GameObject[] fireballs;
 
-
-    private Animator anim;    
+    private Animator anim;
     private PlayerMovement playerMovement;
     private float cooldownTimer = Mathf.Infinity;
 
@@ -21,15 +16,15 @@ public class PlayerAttack : MonoBehaviour
         playerMovement = GetComponent<PlayerMovement>();
     }
 
-
-     private void Update()
+    private void Update()
     {
         if (Input.GetMouseButton(0) && cooldownTimer > attackCooldown && playerMovement.canAttack())
-           Attack();
+            Attack();
 
         cooldownTimer += Time.deltaTime;
     }
-     private void Attack()
+
+    private void Attack()
     {
         anim.SetTrigger("attack");
         cooldownTimer = 0;
@@ -46,7 +41,4 @@ public class PlayerAttack : MonoBehaviour
         }
         return 0;
     }
-
-    }
-   
-
+}
