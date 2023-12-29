@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Healthbar : MonoBehaviour
 {
@@ -14,6 +15,4 @@ public class Healthbar : MonoBehaviour
     {
         currenthealthBar.fillAmount = playerHealth.currentHealth / 10;
     }
-
-   
 }
