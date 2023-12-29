@@ -10,6 +10,12 @@ public class Enemy_Sideways : MonoBehaviour
     private float leftEdge;
     private float rightEdge;
 
+     private void Awake()
+    {
+        leftEdge = transform.position.x - movementDistance;
+        rightEdge = transform.position.x + movementDistance;
+    }
+
      private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
