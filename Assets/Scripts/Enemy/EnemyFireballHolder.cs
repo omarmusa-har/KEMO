@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnemyFireballHolder : MonoBehaviour
 {
-   [SerializeField] private Transform enemy;
+    [SerializeField] private Transform enemy;
 
     private void Update()
     {

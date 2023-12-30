@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
@@ -20,17 +19,15 @@ public class PlayerAttack : MonoBehaviour
     private void Update()
     {
         if (Input.GetMouseButton(0) && cooldownTimer > attackCooldown && playerMovement.canAttack())
-            StartCoroutine(Attack());
+            Attack();
 
         cooldownTimer += Time.deltaTime;
     }
 
-    private IEnumerator Attack()
+    private void Attack()
     {
         anim.SetTrigger("attack");
         cooldownTimer = 0;
-
-        yield return new WaitForSeconds(0.1f);
 
         fireballs[FindFireball()].transform.position = firePoint.position;
         fireballs[FindFireball()].GetComponent<Projectile>().SetDirection(Mathf.Sign(transform.localScale.x));

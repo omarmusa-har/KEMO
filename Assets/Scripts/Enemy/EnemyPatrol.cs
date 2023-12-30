@@ -23,6 +23,7 @@ public class EnemyPatrol : MonoBehaviour
 
     private void Awake()
     {
+         anim = GetComponent<Animator>();
         initScale = enemy.localScale;
     }
     private void OnDisable()
