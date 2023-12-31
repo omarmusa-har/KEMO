@@ -13,6 +13,9 @@ public class MeleeEnemy : MonoBehaviour
 
     [Header("Player Layer")]
     [SerializeField] private LayerMask playerLayer;
+
+    [Header("Attack Sound")]
+    [SerializeField] private AudioClip attackSound;
     private float cooldownTimer = Mathf.Infinity;
 
     //References
@@ -22,6 +25,7 @@ public class MeleeEnemy : MonoBehaviour
 
     private void Awake()
     {
+        
         anim = GetComponent<Animator>();
         enemyPatrol = GetComponentInParent<EnemyPatrol>();
     }
@@ -67,5 +71,6 @@ public class MeleeEnemy : MonoBehaviour
     {
         if (PlayerInSight())
             playerHealth.TakeDamage(damage);
+            SoundManager.instance.PlaySound(attackSound);
     }
 }
