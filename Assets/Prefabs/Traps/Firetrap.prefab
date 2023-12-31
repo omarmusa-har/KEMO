@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b8c964af2b8d9b49b2c9f86a4ab72ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireTrapSound: {fileID: 8300000, guid: 4803bc0872aa4c243ad57d18e878be1f, type: 3}
   damage: 1
   activationDelay: 2
   activeTime: 2
