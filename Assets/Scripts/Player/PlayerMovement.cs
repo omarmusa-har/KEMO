@@ -2,19 +2,29 @@
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Movement Parameters")]
     [SerializeField] private float speed;
     [SerializeField] private float jumpPower;
+
+    [Header("Coyota Time")]
+    [SerializeField] private float coyotaTime;
+    private float coyotaCounter;
+   
+
+    [Header("Layers")]
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask wallLayer;
+
+    [Header("SFX")]
+    [SerializeField] private AudioClip jumpSound;
+
     private Rigidbody2D body;
     private Animator anim;
     private BoxCollider2D boxCollider;
     private float wallJumpCooldown;
     private float horizontalInput;
 
-    [Header("SFX")]
-    [SerializeField] private AudioClip jumpSound;
-
+   
     private void Awake()
     {
         //Grab references for rigidbody and animator from object
