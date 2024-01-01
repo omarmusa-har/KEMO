@@ -150,7 +150,7 @@ MonoBehaviour:
   numberOfFlashes: 0
   components:
   - {fileID: 2320884371343920477}
-  - {fileID: 0}
+  - {fileID: 7248905442646486465}
   deathSound: {fileID: 8300000, guid: 970b75092b25e8c4398c0321fbe79c84, type: 3}
   hurtSound: {fileID: 8300000, guid: 0f0f202a86a93a045bd25e64313f924f, type: 3}
 --- !u!114 &2320884371343920477
@@ -238,6 +238,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7248905442479522742}
+  - component: {fileID: 6168809882527575038}
   m_Layer: 11
   m_Name: RangedEnemyHolder
   m_TagString: Untagged
@@ -261,6 +262,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6168809882527575038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7248905442479522743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8e26f534ea637349a0bc6f44b578ba9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 3
+  iFramesDuration: 0
+  numberOfFlashes: 0
+  components: []
+  deathSound: {fileID: 8300000, guid: 970b75092b25e8c4398c0321fbe79c84, type: 3}
+  hurtSound: {fileID: 8300000, guid: 0f0f202a86a93a045bd25e64313f924f, type: 3}
 --- !u!1 &7248905442646486335
 GameObject:
   m_ObjectHideFlags: 0
