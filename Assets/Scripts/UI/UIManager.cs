@@ -39,6 +39,11 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+      public void StartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
     //Activate game over screen
     public void MainMenu()
     {
@@ -77,5 +82,7 @@ public class UIManager : MonoBehaviour
     {
         SoundManager.instance.ChangeMusicVolume(0.2f);
     }
+
+
     #endregion
 }
